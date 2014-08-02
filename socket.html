@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+  </head>
+  <body>
+    <script>
+		var socket = io.connect();
+		socket.on('date', function(data){
+			$('#date').text(data.date);
+		});
+		
+		socket.on('message', function(data){			
+			message=data.textarea;
+			len=message.length;
+			if(len > 0){
+				printMessage(data.name,message);					
+			}
+		});
+		
+		
+		$(document).ready(function(){
+			$('#textarea').keypress(function(e){
+			if ( event.which == 13 ) {
+				message=$('#textarea').val();
+				len=message.length;
+				strname = $('#name').val();
+				if(len > 0){
+					socket.emit('client_data', {'name':strname,'textarea': message});	
+					printMessage(strname,message);					
+				}
+				$('#textarea').val("");
+			}				
+		});
+		}); 
+		
+	function printMessage(strname,message){
+		$('#messagearea').html($('#messagearea').html()+"<br/><span style='color:blue;font:18px;'>"+strname+"</span> : "+message);
+	}
+    </script>
+    <div>This is our socket.html file</div>
+	<div id="date"></div>
+	<input type="text" id="name" value="Guest"><br/>
+	<textarea id="textarea"></textarea>
+	<div id="messagearea"></div>
+  </body>
+</html>
