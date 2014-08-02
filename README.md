@@ -16,4 +16,4 @@ Incase if any of libraries is missing then install using the following syntax
 node_modules library might be little larger in size, you can skip downloading node_modules and can install
 necessary modules using the above syntax.
 
-<img border="0" src="http://4.bp.blogspot.com/-vvZ1_rDrTKc/U9zpW9V35fI/AAAAAAAAANM/ic2VR08j78g/s1600/chatscreen.png" height="188" width="320">
+<img border="0" src="http://2.bp.blogspot.com/-UerNop9y7mQ/U9ztjRIfMLI/AAAAAAAAANY/i-3I5f4EXKY/s1600/chatscreen.png" height="320" width="543">
