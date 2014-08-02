@@ -2,6 +2,17 @@
   <head>
     <script src="/socket.io/socket.io.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+	<style>
+	.common{
+		width: 200px;
+		height: 30px;
+		padding-left: 10px;
+		
+	}
+	#date{
+		color: green;
+	}
+	</style>
   </head>
   <body>
     <script>
@@ -38,10 +49,12 @@
 		$('#messagearea').html($('#messagearea').html()+"<br/><span style='color:blue;font:18px;'>"+strname+"</span> : "+message);
 	}
     </script>
-    <div>This is our socket.html file</div>
-	<div id="date"></div>
-	<input type="text" id="name" value="Guest"><br/>
-	<textarea id="textarea"></textarea>
+    <div><h1>Welcome to Node.js Socket.io - Simple Multi Chat Application</h1></div>
+	<b> Get tutorial here (Post your comments and query)</b> - <a href='http://www.coolcomputerpctricks.com'>www.coolcomputerpctricks.com</a><br><br>
+	<b> Get Latest Code here </b> - <a href='https://github.com/karthikeyan98'>https://github.com/karthikeyan98</a>
+	<br><br>Current Time: <span id="date"></span><br/>
+	<input type="text" id="name" value="Guest" class="common"> - Type Name here<br/><br/>
+	<textarea id="textarea" class="common"></textarea> - Type Message here and press Enter.
 	<div id="messagearea"></div>
   </body>
 </html>
